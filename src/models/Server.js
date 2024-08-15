@@ -3,6 +3,7 @@ import cors from 'cors'
 import morgan from "morgan";
 import { PORT } from '../config/conf.js'
 import productRoutes from '../routes/productos.routes.js'
+import userRoutes from '../routes/usuarios.routes.js'
 import { dbConnection } from "../db/connection.js";
 
 class Server {
@@ -29,6 +30,7 @@ class Server {
 
     routes(){
         this.app.use('/api', productRoutes)
+        this.app.use('/api', userRoutes)
     }
 
     listen(){
