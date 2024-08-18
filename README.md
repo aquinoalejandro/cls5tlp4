@@ -9,12 +9,13 @@ Requisitos:
 - mongodb version 5.1.0 o superior
 
 
-Ejecutar en desarrollo
+Instala las dependencias
 ```	
-node --env-file .env.development --watch index.js
+npm i
 ```
 
-Ejecutar en producción
+Ejecutar en desarrollo
+```	
+npm run dev
 ```
-node --env-file .env.production index.js
-```
+
