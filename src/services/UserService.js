@@ -1,8 +1,6 @@
 import User from "../models/User.js";
 
 class UserService {
-    constructor() { }
-
     async findAll() {
         return await User.find();
     }
@@ -16,6 +14,7 @@ class UserService {
 
         return await User.updateOne({ _id: User._id }, User);
     }
+
 
 }
 
