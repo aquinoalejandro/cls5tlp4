@@ -15,4 +15,6 @@ router.post('/users', userValidations.Validations, userValidations.validate, use
 
 router.put('/users', userController.updateUser )
 
+
+
 export default router;

@@ -33,9 +33,9 @@ import UserService from "../services/UserService.js"
             })
             
         } catch (error) {
-            return res.status(err.statusCode || 500).json({
-                message: err.message,
-                status: err.status
+            return res.status(error.statusCode || 500).json({
+                message: error.message,
+                status: error.status
             })
         }
     }
@@ -50,9 +50,9 @@ import UserService from "../services/UserService.js"
         }
     
         catch (error) {
-            return res.status(err.statusCode || 500).json({
-                message: err.message,
-                status: err.status
+            return res.status(error.statusCode || 500).json({
+                message: error.message,
+                status: error.status
             })
         }   
     } 

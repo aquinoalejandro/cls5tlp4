@@ -1,6 +1,6 @@
-import mongoose from 'mongoose';
+
 import { model, Schema } from 'mongoose';
-import AutoIncrement from 'mongoose-sequence';
+
 
 const ProductSchema = new Schema({
   name: String,
@@ -12,6 +12,6 @@ const ProductSchema = new Schema({
   timestamps: true,
 });
 
-ProductSchema.plugin(AutoIncrement(mongoose), { inc_field: 'productId' });
+
 
 export default model('products', ProductSchema);

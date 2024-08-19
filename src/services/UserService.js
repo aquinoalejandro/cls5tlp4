@@ -6,13 +6,13 @@ class UserService {
     }
 
 
-    async create(User) {
-        return await User.create(User);
+    async create(user) {
+        return await User.create(user);
     }
 
-    async update(User) {
+    async update(user) {
 
-        return await User.updateOne({ _id: User._id }, User);
+        return await User.updateOne({ _id: user._id }, user);
     }
 
 

@@ -81,7 +81,37 @@ class ProductController {
       })
     }
   }
+
+  async buyProduct(req, res) {
+    try {
+      const productId = req.params.id;
+      const product = await ProductService.findOne(productId);
+      if (!product) {
+        throw ({
+          statusCode: 404,
+          status: 'Not Found',
+          message: 'Producto no encontrado'
+        })
+      }else{
+        const updatedProduct = await ProductService.buy(productId);
+        const response = {
+          message: "Se ha comprado el producto",
+          data: updatedProduct
+        };
+        return res.json(response);
+
+      }
+    } catch (err) {
+      return res.status(err.statusCode || 500).json({
+        message: err.message,
+        status: err.status
+      })
+    }
+  }
   
 }
+
+
+
 
 export default ProductController

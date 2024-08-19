@@ -22,8 +22,15 @@ class ProductService {
         return await Product.deleteOne({ _id: productId });
     }
     async findOne(id) {
-        return await User.findById(id);
+        return await Product.findById(id);
     }
+
+    // Solo deberia poder hacerse con clientes
+    async buy(productId) {
+        return await Product.updateOne({ _id: productId }, { $inc: { stock: -1 } });
+    }
+
+
 
 }
 
